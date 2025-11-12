@@ -20,4 +20,3 @@ Aplicación web para gestionar tareas con autenticación de usuarios.
 
 React con Tailwind CSS.
 
-Repositorio: https://github.com/GabrielSanchez73/act_6_estudio_de_caso_H_S.git
