@@ -10,7 +10,7 @@ Aplicación web para gestionar tareas con autenticación de usuarios.
 
 ## Despliegue
 
-Para desplegar en GitHub Pages: `npm run deploy`
+Despliegue automático con GitHub Actions al hacer push a master.
 
 ## Funcionalidades
 
