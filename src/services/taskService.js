@@ -6,16 +6,24 @@ const TASKS_KEY = 'taskapp_tasks';
 export const getTasks = () => {
   const user = getCurrentUser();
   if (!user) return [];
-  const allTasks = JSON.parse(localStorage.getItem(TASKS_KEY)) || {};
-  return allTasks[user.username] || [];
+  try {
+    const allTasks = JSON.parse(localStorage.getItem(TASKS_KEY)) || {};
+    return allTasks[user.username] || [];
+  } catch {
+    return [];
+  }
 };
 
 export const saveTasks = (tasks) => {
   const user = getCurrentUser();
   if (!user) return;
-  const allTasks = JSON.parse(localStorage.getItem(TASKS_KEY)) || {};
-  allTasks[user.username] = tasks;
-  localStorage.setItem(TASKS_KEY, JSON.stringify(allTasks));
+  try {
+    const allTasks = JSON.parse(localStorage.getItem(TASKS_KEY)) || {};
+    allTasks[user.username] = tasks;
+    localStorage.setItem(TASKS_KEY, JSON.stringify(allTasks));
+  } catch {
+    // Ignore errors
+  }
 };
 
 export const addTask = (task) => {

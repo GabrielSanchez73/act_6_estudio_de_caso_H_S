@@ -1,4 +1,4 @@
 @echo off
 echo Iniciando servidor de desarrollo...
-npm run dev -- --open=false
+npm run dev -- --host --open=false
 pause

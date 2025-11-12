@@ -26,7 +26,11 @@ export const logoutUser = () => {
 };
 
 export const getCurrentUser = () => {
-  return JSON.parse(localStorage.getItem(CURRENT_USER_KEY));
+  try {
+    return JSON.parse(localStorage.getItem(CURRENT_USER_KEY));
+  } catch {
+    return null;
+  }
 };
 
 export const isAuthenticated = () => {
