@@ -10,7 +10,7 @@ Aplicación web para gestionar tareas con autenticación de usuarios.
 
 ## Despliegue
 
-Despliegue automático con GitHub Actions al hacer push a master.
+Despliegue automático con GitHub Actions al hacer push a master, o manual en Netlify conectando el repo.
 
 ## Funcionalidades
 
