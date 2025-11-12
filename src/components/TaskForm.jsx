@@ -5,7 +5,8 @@ const TaskForm = ({ task, onSave, onCancel }) => {
     title: '',
     description: '',
     dueDate: '',
-    priority: 'low'
+    priority: 'low',
+    status: 'pending'
   });
 
   useEffect(() => {
@@ -21,7 +22,7 @@ const TaskForm = ({ task, onSave, onCancel }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     onSave(formData);
-    setFormData({ title: '', description: '', dueDate: '', priority: 'low' });
+    setFormData({ title: '', description: '', dueDate: '', priority: 'low', status: 'pending' });
   };
 
   return (
@@ -56,6 +57,18 @@ const TaskForm = ({ task, onSave, onCancel }) => {
           onChange={handleChange}
           className="w-full p-2 border rounded"
         />
+      </div>
+      <div className="mb-4">
+        <label className="block text-gray-700">Estado</label>
+        <select
+          name="status"
+          value={formData.status}
+          onChange={handleChange}
+          className="w-full p-2 border rounded"
+        >
+          <option value="pending">Pendiente</option>
+          <option value="completed">Completada</option>
+        </select>
       </div>
       <div className="mb-4">
         <label className="block text-gray-700">Prioridad</label>

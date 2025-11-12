@@ -93,7 +93,6 @@ const TaskList = () => {
         >
           <option value="">Todos los estados</option>
           <option value="pending">Pendiente</option>
-          <option value="in_progress">En progreso</option>
           <option value="completed">Completada</option>
         </select>
         <select

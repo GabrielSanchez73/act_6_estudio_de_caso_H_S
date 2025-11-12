@@ -8,7 +8,7 @@ const TaskItem = ({ task, onEdit, onDelete, onToggle }) => {
       <p className="text-sm text-gray-500">Fecha límite: {task.dueDate}</p>
       <p className="text-sm text-gray-500">Prioridad: {task.priority}</p>
       <p className={`text-sm ${task.status === 'completed' ? 'text-green-500' : 'text-yellow-500'}`}>
-        Estado: {task.status}
+        Estado: {task.status === 'pending' ? 'Pendiente' : 'Completada'}
       </p>
       <div className="mt-2 flex gap-2">
         <button

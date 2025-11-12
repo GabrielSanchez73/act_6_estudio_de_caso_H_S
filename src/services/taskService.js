@@ -28,7 +28,7 @@ export const saveTasks = (tasks) => {
 
 export const addTask = (task) => {
   const tasks = getTasks();
-  const newTask = { ...task, id: Date.now().toString(), status: 'pending' };
+  const newTask = { ...task, id: Date.now().toString() };
   tasks.push(newTask);
   saveTasks(tasks);
   return newTask;
