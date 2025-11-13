@@ -67,6 +67,7 @@ const TaskForm = ({ task, onSave, onCancel }) => {
           className="w-full p-2 border rounded"
         >
           <option value="pending">Pendiente</option>
+          <option value="in_progress">En Progreso</option>
           <option value="completed">Completada</option>
         </select>
       </div>

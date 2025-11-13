@@ -7,15 +7,29 @@ const TaskItem = ({ task, onEdit, onDelete, onToggle }) => {
       <p className="text-gray-600">{task.description}</p>
       <p className="text-sm text-gray-500">Fecha límite: {task.dueDate}</p>
       <p className="text-sm text-gray-500">Prioridad: {task.priority}</p>
-      <p className={`text-sm ${task.status === 'completed' ? 'text-green-500' : 'text-yellow-500'}`}>
-        Estado: {task.status === 'pending' ? 'Pendiente' : 'Completada'}
+      <p className={`text-sm ${
+        task.status === 'completed' ? 'text-green-500' :
+        task.status === 'in_progress' ? 'text-blue-500' : 'text-yellow-500'
+      }`}>
+        Estado: {
+          task.status === 'pending' ? 'Pendiente' :
+          task.status === 'in_progress' ? 'En Progreso' : 'Completada'
+        }
       </p>
       <div className="mt-2 flex gap-2">
         <button
           onClick={() => onToggle(task.id)}
-          className="bg-blue-500 text-white px-3 py-1 rounded hover:bg-blue-600"
+          className={`px-3 py-1 rounded text-white ${
+            task.status === 'pending' ? 'bg-yellow-500 hover:bg-yellow-600' :
+            task.status === 'in_progress' ? 'bg-green-500 hover:bg-green-600' :
+            'bg-gray-500 hover:bg-gray-600'
+          }`}
         >
-          {task.status === 'completed' ? 'Marcar Pendiente' : 'Marcar Completada'}
+          {
+            task.status === 'pending' ? 'Iniciar Tarea' :
+            task.status === 'in_progress' ? 'Marcar Completada' :
+            'Marcar Pendiente'
+          }
         </button>
         <button
           onClick={() => onEdit(task)}

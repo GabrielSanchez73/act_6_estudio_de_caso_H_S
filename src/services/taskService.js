@@ -55,7 +55,13 @@ export const toggleTaskStatus = (id) => {
   const tasks = getTasks();
   const task = tasks.find(task => task.id === id);
   if (task) {
-    task.status = task.status === 'completed' ? 'pending' : 'completed';
+    if (task.status === 'pending') {
+      task.status = 'in_progress';
+    } else if (task.status === 'in_progress') {
+      task.status = 'completed';
+    } else {
+      task.status = 'pending';
+    }
     saveTasks(tasks);
     return task;
   }
